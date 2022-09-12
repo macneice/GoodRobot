@@ -1,0 +1,6 @@
+﻿  main.cpp
+C:\Users\super\source\repos\outputMLFilesDarknet\DimensionCalculator.h(14,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\super\source\repos\outputMLFilesDarknet\DimensionCalculator.h(15,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\super\source\repos\outputMLFilesDarknet\DimensionCalculator.h(16,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\super\source\repos\outputMLFilesDarknet\DimensionCalculator.h(17,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  outputMLFilesDarknet.vcxproj -> C:\Users\super\source\repos\outputMLFilesDarknet\Debug\outputMLFilesDarknet.exe
