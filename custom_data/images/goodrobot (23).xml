@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>goodrobot (23).jpg</filename>
+	<path>D:\custom_data\images\goodrobot (23).jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>782</width>
+		<height>720</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Good Robot</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>128</xmin>
+			<ymin>79</ymin>
+			<xmax>314</xmax>
+			<ymax>209</ymax>
+		</bndbox>
+	</object>
+</annotation>
