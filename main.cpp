@@ -7,8 +7,8 @@
 int main( int argc, char *argv[] )
 {
     xml::XMLManip xml;
-    std::filesystem::path imageRootPath = "D:/darknet/custom_data/images";
-    std::filesystem::path trainTestOutputPath = "D:/darknet/custom_data";
+    std::filesystem::path imageRootPath = "D:/custom_data/images";
+    std::filesystem::path trainTestOutputPath = "D:/custom_data";
 
 	if ( argc > 1 )
 	{
@@ -19,7 +19,7 @@ int main( int argc, char *argv[] )
 		trainTestOutputPath = argv[2];
 	}
      for (const std::filesystem::directory_entry& dir_entry : 
-         std::filesystem::recursive_directory_iterator(imageRootPath))
+         std::filesystem::recursive_directory_iterator(imageRootPath.make_preferred()))
     {
         if(dir_entry.path().extension() == ".xml")
         {
@@ -36,11 +36,13 @@ int main( int argc, char *argv[] )
 
      std::ofstream trainFile;
      std::ofstream testFile;
-     trainFile.open( "D:/darknet/custom_data/train.txt" );
-     testFile.open( "D:/darknet/custom_data/test.txt" );
+     std::filesystem::path trainPath = trainTestOutputPath / "train.txt";
+     std::filesystem::path testPath = trainTestOutputPath / "test.txt";
+     trainFile.open( trainPath.make_preferred() );
+     testFile.open( testPath.make_preferred() );
 
      for( const std::filesystem::directory_entry& dir_entry :
-         std::filesystem::recursive_directory_iterator( imageRootPath ) )
+         std::filesystem::recursive_directory_iterator( imageRootPath.make_preferred() ) )
      {
          if( dir_entry.path().extension() == ".jpg" )
          {
