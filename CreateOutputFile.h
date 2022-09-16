@@ -11,13 +11,14 @@ namespace ml_file
     public:
         CreateOutputFile() = default;
         CreateOutputFile(
+			int classId,
             const dimension::DimensionCalculator& dimCalc,
             const std::filesystem::path& filePath )
         {
-            std::ofstream myfile;
-            myfile.open( filePath.string() );
-            myfile << dimCalc.GetXCentre() << " " << dimCalc.GetYCentre() << " " << dimCalc.GetWidth() << " " << dimCalc.GetHeight();
-            myfile.close();
+            std::ofstream yoloFile;
+            yoloFile.open( filePath.string() );
+            yoloFile << classId << " "<< dimCalc.GetXCentre() << " " << dimCalc.GetYCentre() << " " << dimCalc.GetWidth() << " " << dimCalc.GetHeight();
+            yoloFile.close();
         }
     };
 }

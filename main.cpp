@@ -4,18 +4,28 @@
 #include <iostream>
 #include <random>
 #include <fstream>
-int main()
+int main( int argc, char *argv[] )
 {
     xml::XMLManip xml;
-    std::filesystem::path root = "D:/darknet/custom_data/images";
+    std::filesystem::path imageRootPath = "D:/darknet/custom_data/images";
+    std::filesystem::path trainTestOutputPath = "D:/darknet/custom_data";
+
+	if ( argc > 1 )
+	{
+		imageRootPath = argv[1];
+	}
+	if ( argc > 2 )
+	{
+		trainTestOutputPath = argv[2];
+	}
      for (const std::filesystem::directory_entry& dir_entry : 
-         std::filesystem::recursive_directory_iterator(root))
+         std::filesystem::recursive_directory_iterator(imageRootPath))
     {
         if(dir_entry.path().extension() == ".xml")
         {
-            std::filesystem::path path = root;
+            std::filesystem::path path = imageRootPath;
             path /= dir_entry.path().filename();
-            xml.ParseDoc(root.make_preferred(), path.make_preferred());
+            xml.ParseDoc(imageRootPath.make_preferred(), path.make_preferred());
         }
      }
      std::random_device rd;
@@ -30,12 +40,12 @@ int main()
      testFile.open( "D:/darknet/custom_data/test.txt" );
 
      for( const std::filesystem::directory_entry& dir_entry :
-         std::filesystem::recursive_directory_iterator( root ) )
+         std::filesystem::recursive_directory_iterator( imageRootPath ) )
      {
          if( dir_entry.path().extension() == ".jpg" )
          {
              const int product = bernoulli( generator );
-             std::filesystem::path path = root;
+             std::filesystem::path path = imageRootPath;
              path /= dir_entry.path().filename();
              if( product )
              {

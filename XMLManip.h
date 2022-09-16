@@ -57,7 +57,8 @@ namespace xml
 
             m_DimensionCalculator = dimension::DimensionCalculator( width, height, box );
 
-            m_OutputFileCreator = ml_file::CreateOutputFile( m_DimensionCalculator, m_FilePath );
+			//magic number is single class id, needs updating
+            m_OutputFileCreator = ml_file::CreateOutputFile( 0, m_DimensionCalculator, m_FilePath );
         }
 
     private:

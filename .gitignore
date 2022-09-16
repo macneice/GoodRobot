@@ -1,2 +1,12 @@
-./outputMLFilesDarknet\Debug\
-./.vs/
+outputMLFilesDarknet/Debug/
+outputMLFilesDarknet/x64/
+x64/
+**/.vs/**
+# Compiled Files
+*.obj
+*.ilk
+*.xdc
+*.pdb
+*.idb
+*.db
+*.VC.db*
