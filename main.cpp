@@ -31,7 +31,7 @@ int main( int argc, char *argv[] )
      std::random_device rd;
      std::mt19937 generator( rd() );
      std::uniform_int_distribution<int> uniform;
-     std::bernoulli_distribution bernoulli( 0.8 ); // 90% 1 ; 10% 0
+     std::bernoulli_distribution bernoulli( 0.8 ); // 80% train ; 20% test
      
 
      std::ofstream trainFile;
